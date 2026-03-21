@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npx create-vite@latest . --template react-ts)",
+      "Bash(rm index.html)",
+      "Bash(npx --yes create-vite@latest . --template react-ts)",
+      "Bash(npx --yes create-vite@latest temp-vite --template react-ts)",
+      "Bash(cp temp-vite/package.json temp-vite/tsconfig*.json temp-vite/vite.config.ts temp-vite/eslint.config.js .)",
+      "Bash(cp -r temp-vite/src temp-vite/public .)",
+      "Bash(cp temp-vite/index.html .)",
+      "Bash(rm -rf temp-vite)",
+      "Bash(npm install:*)",
+      "Bash(curl -s http://localhost:5173)",
+      "Bash(xxd \"C:/_Work/NL-LIB/aigle-movie/data/prompt/prompt.md\")",
+      "Bash(node -e \":*)",
+      "Bash(node -e \"var fs=require\\(''fs''\\);var d=JSON.parse\\(fs.readFileSync\\(''./data/1. 초등 수학 문제 1/NeoStudio_20260319_161412_RING NOTEBOOK_033 Page_strokes_parsed.json'',''utf8''\\)\\);var s=d[0].strokes;var delays=[];for\\(var i=1;i<s.length;i++\\){delays.push\\(s[i].startTime-s[i-1].endTime\\);}delays.sort\\(function\\(a,b\\){return a-b;}\\);console.log\\(''cnt:''+s.length+'' min:''+delays[0]+'' max:''+delays[delays.length-1]+'' med:''+delays[Math.floor\\(delays.length/2\\)]\\);var b={''u100'':0,''u300'':0,''u500'':0,''u1k'':0,''u2k'':0,''u5k'':0,''o5k'':0};delays.forEach\\(function\\(d\\){if\\(d<100\\)b.u100++;else if\\(d<300\\)b.u300++;else if\\(d<500\\)b.u500++;else if\\(d<1000\\)b.u1k++;else if\\(d<2000\\)b.u2k++;else if\\(d<5000\\)b.u5k++;else b.o5k++;}\\);console.log\\(JSON.stringify\\(b\\)\\);\")",
+      "Bash(npx tsc:*)",
+      "Bash(pip install:*)",
+      "Bash(python3 -c \":*)",
+      "Bash(python3 -c \"import pymupdf; doc = pymupdf.open\\(''C:/_Work/NL-LIB/aigle-movie/data/1. 초등 수학 문제 1/문제 정보 + 채점 기준.pdf''\\); [print\\(p.get_text\\(\\)\\) for p in doc]\")",
+      "Bash(where python:*)",
+      "Bash(python -c \"import fitz; doc = fitz.open\\(''C:/_Work/NL-LIB/aigle-movie/data/1. 초등 수학 문제 1/문제 정보 + 채점 기준.pdf''\\); [print\\(p.get_text\\(\\)\\) for p in doc]\")"
+    ]
+  }
+}
