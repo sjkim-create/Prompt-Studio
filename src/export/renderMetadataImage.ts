@@ -44,7 +44,7 @@ export function renderMetadataImage(strokes: Stroke[]): HTMLCanvasElement {
     for (let pi = 1; pi < stroke.points.length; pi++) {
       const prev = stroke.points[pi - 1];
       const pt = stroke.points[pi];
-      const lineWidth = Math.max(0.5, pt.f * 2.5 * (transform.scale / 15));
+      const lineWidth = Math.max(0.5, 1.5 * (transform.scale / 15));
 
       ctx.beginPath();
       ctx.moveTo(tx(prev.x, transform), ty(prev.y, transform));
@@ -64,9 +64,7 @@ export function renderMetadataImage(strokes: Stroke[]): HTMLCanvasElement {
   delays.forEach(d => {
     const cx = tx(d.x, transform);
     const cy = ty(d.y, transform);
-    const label = d.delayMs >= 1000
-      ? `${(d.delayMs / 1000).toFixed(1)}s`
-      : `${Math.round(d.delayMs)}ms`;
+    const label = `${(d.delayMs / 1000).toFixed(1)}s`;
 
     markerPositions.push({ cx, cy, label });
   });
@@ -145,7 +143,7 @@ export function renderMetadataImage(strokes: Stroke[]): HTMLCanvasElement {
   ctx.fillText('0s', barX, labelY);
   ctx.fillText(formatTime(totalDuration), barX + barW, labelY);
 
-  // Delay markers on bar
+  // Delay markers on bar with elapsed time
   delays.forEach(d => {
     const delayStartTime = strokes[d.strokeIndex].startTime - baseTime;
     const xPos = barX + (delayStartTime / totalDuration) * barW;
@@ -158,10 +156,14 @@ export function renderMetadataImage(strokes: Stroke[]): HTMLCanvasElement {
     ctx.lineWidth = 1;
     ctx.stroke();
 
-    // Delay label
-    const label = d.delayMs >= 1000
-      ? `${(d.delayMs / 1000).toFixed(1)}s`
-      : `${Math.round(d.delayMs)}ms`;
+    // Elapsed time label (black)
+    const elapsed = `${(delayStartTime / 1000).toFixed(0)}s`;
+    ctx.fillStyle = '#333';
+    ctx.font = '8px sans-serif';
+    ctx.fillText(elapsed, xPos, labelY);
+
+    // Delay duration label (red)
+    const label = `${(d.delayMs / 1000).toFixed(1)}s`;
     ctx.fillStyle = '#e94560';
     ctx.font = '8px sans-serif';
     ctx.fillText(label, xPos, labelY + 10);

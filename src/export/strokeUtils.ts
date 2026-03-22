@@ -110,7 +110,7 @@ export function drawStrokesUpTo(
     const prev = timeline[i - 1];
     if (prev.strokeIdx !== pt.strokeIdx) continue;
 
-    const lineWidth = Math.max(0.5, pt.f * 2.5 * (transform.scale / 15));
+    const lineWidth = Math.max(0.5, 1.5 * (transform.scale / 15));
     ctx.beginPath();
     ctx.moveTo(tx(prev.x, transform), ty(prev.y, transform));
     ctx.lineTo(tx(pt.x, transform), ty(pt.y, transform));

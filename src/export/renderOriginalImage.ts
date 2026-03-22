@@ -21,7 +21,7 @@ export function renderOriginalImage(strokes: Stroke[]): HTMLCanvasElement {
     for (let pi = 1; pi < stroke.points.length; pi++) {
       const prev = stroke.points[pi - 1];
       const pt = stroke.points[pi];
-      const lineWidth = Math.max(0.5, pt.f * 2.5 * (transform.scale / 15));
+      const lineWidth = Math.max(0.5, 1.5 * (transform.scale / 15));
 
       ctx.beginPath();
       ctx.moveTo(tx(prev.x, transform), ty(prev.y, transform));

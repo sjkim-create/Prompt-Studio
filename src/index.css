@@ -11,3 +11,76 @@ body {
 #root {
   width: 100%;
 }
+
+/* Markdown 렌더링 스타일 (다크 테마) */
+.eval-markdown {
+  font-family: 'Noto Sans KR', 'Segoe UI', sans-serif;
+  font-size: 0.9em;
+  line-height: 1.8;
+  color: #ddd;
+}
+.eval-markdown h1, .eval-markdown h2, .eval-markdown h3,
+.eval-markdown h4, .eval-markdown h5, .eval-markdown h6 {
+  color: #fff;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.3em;
+}
+.eval-markdown h1 { font-size: 1.4em; }
+.eval-markdown h2 { font-size: 1.25em; }
+.eval-markdown h3 { font-size: 1.1em; }
+.eval-markdown h4 { font-size: 1em; }
+.eval-markdown p {
+  margin: 0.6em 0;
+}
+.eval-markdown ul, .eval-markdown ol {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+.eval-markdown li {
+  margin: 0.3em 0;
+}
+.eval-markdown strong {
+  color: #f0c040;
+}
+.eval-markdown em {
+  color: #aac;
+}
+.eval-markdown hr {
+  border: none;
+  border-top: 1px solid #444;
+  margin: 1em 0;
+}
+.eval-markdown code {
+  background: #2a2a3e;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+.eval-markdown pre {
+  background: #2a2a3e;
+  padding: 12px;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+.eval-markdown table {
+  border-collapse: collapse;
+  margin: 0.8em 0;
+  width: 100%;
+}
+.eval-markdown th, .eval-markdown td {
+  border: 1px solid #444;
+  padding: 6px 10px;
+  text-align: left;
+}
+.eval-markdown th {
+  background: #2a2a3e;
+  color: #fff;
+}
+.eval-markdown blockquote {
+  border-left: 3px solid #e94560;
+  padding-left: 12px;
+  margin: 0.5em 0;
+  color: #bbb;
+}

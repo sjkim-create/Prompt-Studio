@@ -39,6 +39,7 @@ export interface TimelinePoint {
 export interface FileEntry {
   name: string;
   path: string;
+  pdfPath: string;
 }
 
 export interface DelayInfo {

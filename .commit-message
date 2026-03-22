@@ -1,0 +1,13 @@
+feat: AI 자동 채점 시스템 구현 및 3-column UI 리팩터링
+
+- OpenAI/Gemini 멀티 모델 AI 평가 엔진 추가 (SSE 스트리밍, 병렬 평가)
+- 동영상(Gemini) / 이미지(OpenAI+Gemini) 평가 지원
+- 3-column 레이아웃: 프롬프트 사이드바 | 콘텐츠 | 평가 결과 패널
+- IndexedDB 기반 평가 히스토리 영속 저장 (프롬프트 포함)
+- 프롬프트 편집/다운로드/초기화 기능
+- 이미지 렌더링 개선: 균일 두께, 초 단위 라벨, 경과 시간 표시
+- 획순/딜레이 시간축 분석 프롬프트 (stroke_prompt.md, movie_stroke_prompt.md)
+- 이미지 풀스크린 뷰어 (줌/패닝)
+- 패널 폭 드래그 조절
+- OCI 배포 스크립트 (deploy-scripts/)
+- VSCode F5 실행 설정 (.vscode/)
